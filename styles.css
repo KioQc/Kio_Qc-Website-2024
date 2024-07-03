@@ -140,3 +140,12 @@ nav ul li a:hover {
 .social-links a:hover {
     text-decoration: underline;
 }
+
+
+.welcome-section {
+    margin: 25px;
+}
+
+.welcome-photo {
+    margin: 50px;
+}
