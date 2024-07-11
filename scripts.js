@@ -1,22 +1,40 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var links = document.querySelectorAll('.nav-link');
+    var sections = document.querySelectorAll('.content-section');
+    var closeButtons = document.querySelectorAll('.close-btn');
 
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetId = link.getAttribute('data-target');
-        document.querySelectorAll('.content-section').forEach(section => {
-            section.classList.remove('active');
+            links.forEach(function(link) {
+                link.classList.remove('active');
+            });
+
+            link.classList.add('active');
+
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            var target = link.getAttribute('data-target');
+            document.getElementById(target).classList.add('active');
         });
-        document.getElementById(targetId).classList.add('active');
+    });
+
+    closeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            links.forEach(function(link) {
+                link.classList.remove('active');
+            });
+        });
     });
 });
 
-document.querySelectorAll('.close-btn').forEach(button => {
-    button.addEventListener('click', (event) => {
-        event.stopPropagation();
-        button.closest('.content-section').classList.remove('active');
-    });
-});
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             
             "color": {
-                "value": ["#ffffff", "#B03EC3"] // Couleur des particules (blanc ici)
+                "value": ["#ffffff", "#B03EC3"] 
             },
             "shape": {
                 "type": "circle",
@@ -66,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "line_linked": {
                 "enable": true,
                 "distance": 150,
-                "color": "#9b59b6", // Couleur des lignes de liaison (blanc ici)
+                "color": "#9b59b6",
                 "opacity": 0.4,
                 "width": 1
             },
