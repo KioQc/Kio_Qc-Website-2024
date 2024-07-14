@@ -172,6 +172,17 @@ nav ul li a {
     margin-top: -425px;
 }
 
+
+.social-link_nsfw {
+    margin-top: 500px;
+    opacity: 0%;
+}
+
+.social-link_nsfw:hover {
+    opacity: 100%;
+}
+
+
 /* Mobile styles */
 @media (max-width: 768px) {
     .pc-specs-container {
