@@ -200,7 +200,7 @@ nav ul li a {
 
 .subcategory-btn:hover,
 .subcategory-btn.active {
-    background-color: #4a274e;
+    background-color: #59305e;
 }
 
 .photo-category {
@@ -211,13 +211,28 @@ nav ul li a {
     width: 100%;
     max-width: 300px;
     margin: 10px;
-    border: 2px solid #4a274e;
+    border-radius: 15px;
+    border: 5px solid #4a274e;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.photo-category img:hover {
+    border-radius: 5px;
+    border: 5px solid #74367a;
 }
 
 .photo-category.active {
-    display: block;
+    display:table-row;
+    height: 400px;
+    align-content: space-evenly;
 }
 
+
+
+
+
+
+.photo-category img:hover {opacity: 0.7;}
 
 
 /* Mobile styles */
