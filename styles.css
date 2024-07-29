@@ -237,16 +237,45 @@ nav ul li a {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+    header {
+        height: 40px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 10px 50px;
+    }
+
+    .content {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .welcome-section, .welcome-photo {
+        margin: 20px;
+    }
+
     .pc-specs-container {
         flex-direction: column; 
         align-items: flex-start; 
     }
 
     .pc-image {
-        margin-left: -150px;
+        margin-left: 0;
         margin-top: 20px;
-        max-width: 70%;
+        max-width: 100%;
         max-height: auto;
     }
-}
 
+    .social-link_nsfw {
+        margin-top: 20px;
+    }
+}
