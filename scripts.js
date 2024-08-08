@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var enButton = document.getElementById('enbutton');
+    var frButton = document.getElementById('frbutton');
+    var enElements = document.querySelectorAll('.lang.en');
+    var frElements = document.querySelectorAll('.lang.fr');
+
+    enButton.addEventListener('click', function() {
+        enElements.forEach(function(element) {
+            element.style.display = 'block';
+        });
+        frElements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+    });
+
+    frButton.addEventListener('click', function() {
+        enElements.forEach(function(element) {
+            element.style.display = 'none';
+        });
+        frElements.forEach(function(element) {
+            element.style.display = 'block';
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     var links = document.querySelectorAll('.nav-link');
     var sections = document.querySelectorAll('.content-section');
     var closeButtons = document.querySelectorAll('.close-btn');
@@ -33,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(target).classList.add('active');
         });
     });
+    
 
     subcategoryButtons.forEach(function(button) {
         button.addEventListener('click', function() {
@@ -64,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 
 
 
