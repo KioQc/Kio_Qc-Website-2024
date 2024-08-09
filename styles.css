@@ -76,6 +76,7 @@ nav ul li a {
     overflow-y: auto;
     animation: drop 1s forwards;
     opacity: 0;
+    margin: 5px;
 }
 
 .skills-list {
