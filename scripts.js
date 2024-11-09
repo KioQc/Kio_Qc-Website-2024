@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "value": 70,
                 "density": {
                     "enable": true,
-                    "value_area": 800
+                    "value_area": 80
                 }
             },
             
