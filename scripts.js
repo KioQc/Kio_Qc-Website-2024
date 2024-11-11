@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     particlesJS("particles-js", {
         "particles": {
             "number": {
-                "value": 70,
+                "value": 10,
                 "density": {
                     "enable": true,
                     "value_area": 80
