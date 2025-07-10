@@ -1,101 +1,20 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Pages not found</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Not Found</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <body>
-    <header>
-        <h1 class="glow-text-wrapper">
-            <span id="animated-glow-text" class="glow-text" data-text="Furry Qc Portfolio">
-            </span>
-          </h1>
-
-    <div id="particles-js"></div>
-    <div class="content">
-      <h1 class="glow-text-wrapper">
-        <span id="animated-glow-text" class="glow-text" data-text="404">
-        </span>
-      </h1>
-        <p>Oups! La page que tu cherches n'existe pas.</p>
-        <p>Il semble que tu te sois perdu.</p>
-        <a href="/" class="close-btn">Retourner à l'accueil</a>
-    </div>
-
+  <main style="text-align: center; padding: 5rem 2rem;">
+    <h1 style="font-size: 4rem; margin-bottom: 1rem;">404</h1>
+    <p style="font-size: 1.25rem; color: var(--accent); margin-bottom: 2rem;">
+      Whoops! Looks like this page doesn’t exist.
+    </p>
+    <a href="/" style="color: var(--fg); background: var(--card-bg); padding: 0.75rem 1.5rem; border-radius: var(--border-radius); text-decoration: none; font-weight: bold;">
+      ⬅️ Back to Home
+    </a>
+  </main>
 </body>
-<script>
-    const textContainer = document.getElementById("animated-glow-text");
-          const glowLayer = document.querySelector(".glow-layer");
-      
-          const letters = textContainer.dataset.text.split("");
-      
-          const renderLetter = (char, i, extraClass = "") =>
-              `<span class="glow-char glow-text ${extraClass}" style="--char-index: ${i}">${char === " " ? "&nbsp;" : char}</span>`;
-      
-          const html = letters.map((char, i) => renderLetter(char, i)).join("");
-          const htmlGlow = letters.map((char, i) => renderLetter(char, i, "glow-blur")).join("");
-      
-          textContainer.innerHTML = html;
-          glowLayer.innerHTML = htmlGlow;
-      </script>
-      <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.39.0/tsparticles.min.js"></script>
-      <script>
-          tsParticles.load("particles-js", {
-            particles: {
-              number: {
-                value: 300,
-                density: {
-                  enable: true,
-                  value_area: 800
-                }
-              },
-              shape: {
-                type: "square",
-              },
-              color: {
-                value: "#be1bdf",
-              },
-              opacity: {
-                value: 0.5,
-                random: true,
-                animation: {
-                  enable: true,
-                  speed: 1,
-                  minimumValue: 0.1
-                }
-              },
-              size: {
-                value: 4,
-                random: true,
-                animation: {
-                  enable: true,
-                  speed: 10,
-                  minimumValue: 1
-                }
-              },
-              links: {
-                enable: true,
-                distance: 50,
-                color: "#be1bdf",
-                opacity: 0.4,
-                width: 1
-              },
-              move: {
-                enable: true,
-                speed: 2,
-                direction: "none",
-                random: true,
-                straight: false,
-                outModes: {
-                  default: "out"
-                }
-              }
-            },
-          });
-        </script>
-<script src="scripts.js"></script>
 </html>
