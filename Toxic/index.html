@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toxic Version | KioQc</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      color: #ff2fee;
+      font-family: 'Orbitron', monospace;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: flickerBg 6s infinite alternate;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px #ff0bf3;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .warning {
+      color: #ff0000;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+    }
+
+    .toxicity {
+      background: rgba(255, 0, 0, 0.1);
+      border: 2px solid rgb(111, 0, 255);
+      padding: 2rem;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #930db4;
+    }
+
+    @keyframes flickerBg {
+      0% { background-color: #000; }
+      100% { background-color: #0d000d; }
+    }
+
+    a {
+      color: #ff7777;
+      text-decoration: underline;
+    }
+
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px red; }
+  20% { text-shadow: -2px -2px rgb(72, 1, 78); }
+  40% { text-shadow: 2px -2px blue; }
+  60% { text-shadow: -2px 2px magenta; }
+  80% { text-shadow: 2px 2px rgb(79, 0, 206); }
+  100% { text-shadow: -2px -2px rgb(82, 0, 0); }
+}
+
+.toxic-title {
+  animation: glitch 0.4s infinite;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(255, 1, 242);
+  position: relative;
+}
+
+</style>
+
+<audio id="toxicSound" src="sound.mp3" preload="auto"></audio>
+
+<script>
+  const sound = document.getElementById('toxicSound');
+  sound.volume = 0.3;
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      sound.play().catch(() => {
+        console.log("Autoplay bloqué, attendre un clic pour jouer le son.");
+        document.addEventListener('click', playOnClick, { once: true });
+      });
+    }, 1000); // délai de 1000 ms (1 seconde)
+  });
+
+  function playOnClick() {
+    sound.play().catch(err => {
+      console.log("Erreur en jouant le son au clic:", err);
+    });
+  }
+</script>
+
+
+
+
+
+<h1 class="toxic-title">⚠ Toxic Version ⚠</h1>
+<div class="warning">Read only if you're not soft as fuck</div>
+
+
+  <div class="toxicity">
+    <p>
+      Les couples ouverts pis le polyamour, c’est de la marde.
+T’aimes quelqu’un? TU FOURRES PAS AILLEURS.
+Point final. Si tu laisses ton chum ou ta blonde baiser du monde, t’es juste un esti de cave qui s’en câlisse. T’es pas en amour, t’es en train de partager ton jouet.
+    </p>
+    <p>
+      C’est pas de l’ouverture d’esprit, c’est de la foutue trahison déguisée en liberté.
+Pis j’te parle même pas des osties qui se vantent d’être "poly" comme si c’était une qualité.
+    </p>
+    <p>
+      Tu peux pas aimer 2 personnes en même temps, câlisse.
+Y’en a TOUJOURS un qui va se faire crisser out. Toujours.
+C’est juste de la jalousie pis du drama
+    </p>
+    <p>
+      Appelle-moi toxique? Ben ouin, j’suis toxique en esti quand j’vois autant de bullshit normalisée.
+    </p>
+    <p>
+      C’est pas une opinion, c’est un esti de fait. Au moins moi, j’me respecte. Toé, continue d’te mentir.
+    </p>
+  </div>
+
+  <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.5">Made by <a href="https://furryqc.net/">KioQc</a> — fuck les osti d'epais.</p>
+
+  
+</body>
+</html>
