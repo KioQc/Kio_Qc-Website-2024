@@ -7,14 +7,63 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header>
-    <nav class="nav_background">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <a class="dot">•</a>
-        <span class="version">v1.0.0 (w.i.p)</span>
+<header>
+<nav class="nav_background">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <a></a><a><a><a><a><a><a><a><a><a> <a >  </a>
+    <form method="GET" action="https://www.google.com/search">
+      <input name="q" type="text" placeholder="Search Google...">
+      <input type="submit" value="Search">
+    </form>
+  </ul>
+
+    <!-- HAMBURGER -->
+  <div class="hamburger" onclick="openLogin(this)">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</nav>
+</header>
+
+<!-- POPUP LOGIN -->
+<div id="loginPopup" class="login-popup">
+  <div class="popup-content">
+    <span class="close-popup" onclick="closePopup()">✖</span>
+    <h3>🔒 Connexion requise</h3>
+    <input type="password" id="passwordInput" placeholder="Mot de passe">
+    <button onclick="checkPassword()">Entrer</button>
+  </div>
+</div>
+
+
+
+<!-- MENU D’APPS -->
+<div class="app-menu" id="appMenu">
+  <div class="app-card">
+    <a href="https://192.168.2.125:8006/" target="_blank">
+      <img src="icons/proxmox.png" alt="Proxmox">
+      <span>Proxmox</span>
+    </a>
+  </div>
+  <div class="app-card">
+    <a href="https://emby.furryqc.net/" target="_blank">
+      <img src="icons/emby.png" alt="Emby">
+      <span>Emby</span>
+    </a>
+  </div>
+  <div class="app-card">
+    <a href="http://homeassistant.local:8123/" target="_blank">
+      <img src="icons/homeassistant.png" alt="Home Assistant">
+      <span>Home&nbsp;Assistant</span>
+    </a>
+  </div>
+</div>
+
+
       </ul>
     </nav>
   </header>
@@ -58,3 +107,50 @@
   </footer>
 </body>
 </html>
+
+
+<script>
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+const CORRECT_HASH = "2ff75bc5476c4fa564b45ff10891d4f67118161ad63d0536acffaa11c7df3a3e";
+
+function openLogin(hamburger) {
+  hamburger.classList.toggle("open");
+
+  const appMenu = document.getElementById("appMenu");
+  const popup = document.getElementById("loginPopup");
+
+  if (hamburger.classList.contains("open")) {
+    popup.classList.add("show");
+  } else {
+    popup.classList.remove("show");
+    appMenu.classList.remove("active");
+  }
+}
+
+function closePopup() {
+  const popup = document.getElementById("loginPopup");
+  const hamburger = document.querySelector(".hamburger"); // ou ton id si t’en as un
+  popup.classList.remove("show");
+  hamburger.classList.remove("open");
+}
+
+async function checkPassword() {
+  const input = document.getElementById("passwordInput").value;
+  const hash = await sha256(input);
+  const popup = document.getElementById("loginPopup");
+  const appMenu = document.getElementById("appMenu");
+
+  if (hash === CORRECT_HASH) {
+    popup.classList.remove("show");
+    appMenu.classList.add("active");
+  } else {
+    alert("❌ Mauvais mot de passe");
+  }
+}
+</script>
