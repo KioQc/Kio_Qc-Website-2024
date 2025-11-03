@@ -236,6 +236,40 @@ body::before {
   color: #fff;
 }
 
+@media (max-width: 870px) {
+  .nav_background {
+    flex-direction: row;      /* garder sur une ligne */
+    justify-content: center;  /* centrer tout */
+    align-items: center;
+    gap: 10px;                /* espacement entre liens */
+    padding: 28px 12px;        /* réduire la hauteur */
+    border-radius: 15px;
+    max-width: 85%;
+    margin: 10px auto;        /* centrer horizontalement */
+  }
+
+  .nav_background ul {
+    display: flex;
+    flex-direction: row;      /* garder horizontal */
+    gap: 10px;                /* espacement entre liens */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  /* cacher le Google search sur mobile */
+  .nav_background form {
+    display: none;
+  }
+
+  /* hamburger centré */
+  .hamburger {
+    margin-left: 10px;
+  }
+}
+
+
+
 /* === GOOGLE SEARCH FORM === */
 form {
   display: flex;
